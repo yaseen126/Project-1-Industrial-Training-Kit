@@ -1,0 +1,602 @@
+/* ==========================================================================
+   DECODELABS PROJECT 1 — STYLESHEET
+   Palette: Mocha Mousse (#A5958F) | Ethereal Blue (#A0D4E0) | Moonlit Grey (#F2F0EA)
+   Architecture: Mobile-First, CSS Grid (Macro), Flexbox (Micro)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CUSTOM PROPERTIES / DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Exact Palette from Project Brief */
+  --color-mocha-mousse: #A5958F;  /* Stability */
+  --color-ethereal-blue: #A0D4E0; /* Trust */
+  --color-moonlit-grey:  #F2F0EA; /* Refinement */
+
+  /* Contrast Text & Surface Accents */
+  --color-dark-text: #2A2421;
+  --color-muted-text: #5E5550;
+  --color-surface-card: #FFFFFF;
+  --color-border: #D8D2C7;
+  --color-ethereal-dark: #14535F;
+  --color-focus: #14535F;
+
+  /* Typography (Max 2 families, 3 weights: 400, 600, 700) */
+  --font-headline: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --weight-regular: 400;
+  --weight-medium: 600;
+  --weight-bold: 700;
+
+  /* Fluid Typography with clamp() */
+  --font-size-hero: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --font-size-h3: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-sm: clamp(0.875rem, 0.82rem + 0.2vw, 0.95rem);
+
+  /* Shadows & Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --shadow-subtle: 0 4px 12px rgba(42, 36, 33, 0.06);
+  --shadow-hover: 0 10px 24px rgba(42, 36, 33, 0.12);
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. ACCESSIBILITY & GLOBAL RESET
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+  color: var(--color-dark-text);
+  background-color: var(--color-moonlit-grey);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Accessible Focus Ring */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip to Main Content Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background-color: var(--color-dark-text);
+  color: var(--color-moonlit-grey);
+  padding: 0.75rem 1.25rem;
+  z-index: 10000;
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.container {
+  width: min(100% - 2.5rem, 1200px);
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-headline);
+  color: var(--color-dark-text);
+  line-height: 1.2;
+  font-weight: var(--weight-bold);
+}
+
+h1 { font-size: var(--font-size-hero); letter-spacing: -0.02em; }
+h2 { font-size: var(--font-size-h2); letter-spacing: -0.01em; }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  color: var(--color-muted-text);
+}
+
+a {
+  color: var(--color-ethereal-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-mocha-mousse);
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+  max-width: 60ch;
+}
+
+.section-title {
+  margin-bottom: 0.5rem;
+}
+
+.section-subtext {
+  font-size: var(--font-size-base);
+  color: var(--color-muted-text);
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER & NAVIGATION (FLEXBOX MICRO LAYOUT)
+   -------------------------------------------------------------------------- */
+.site-header {
+  background-color: rgba(242, 240, 234, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-dark-text);
+  text-decoration: none;
+}
+
+/* Mobile Menu Button (Hamburger) */
+.mobile-menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-dark-text);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.mobile-menu-btn.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Navigation Menu Drawer (Mobile Default Stacked) */
+.nav-menu {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 68px);
+  background-color: var(--color-moonlit-grey);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  overflow-y: auto;
+}
+
+.nav-menu.is-open {
+  transform: translateX(0);
+  box-shadow: var(--shadow-hover);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-family: var(--font-headline);
+  font-size: var(--font-size-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-dark-text);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-ethereal-dark);
+}
+
+.nav-cta {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. BUTTONS (FLEXBOX COMPONENTS)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-ethereal-blue);
+  color: var(--color-ethereal-dark);
+  border-color: var(--color-ethereal-blue);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-primary:hover {
+  background-color: #8CCBD9;
+  border-color: #8CCBD9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-dark-text);
+  border-color: var(--color-mocha-mousse);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-mocha-mousse);
+  color: var(--color-moonlit-grey);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: var(--font-size-sm);
+  width: auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-block: 4rem 5rem;
+  background: linear-gradient(180deg, var(--color-moonlit-grey) 0%, #E7E3D8 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 64ch;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-ethereal-dark);
+  background-color: var(--color-ethereal-blue);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: 1.25rem;
+}
+
+.hero-heading {
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtext {
+  font-size: clamp(1.05rem, 0.95rem + 0.3vw, 1.25rem);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. FEATURES SECTION (CSS GRID 1 COL MOBILE -> 2 TAB -> 3 DESK)
+   -------------------------------------------------------------------------- */
+.features-section {
+  padding-block: 4.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile default: 1 column */
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-ethereal-blue);
+}
+
+/* Icon Space Reservation to Prevent CLS */
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-moonlit-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: var(--font-size-h3);
+}
+
+.card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted-text);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCORDION / FAQ SECTION (VANILLA JS STATE DEMO)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding-block: 4.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.accordion-item {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion-trigger {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-headline);
+  font-size: var(--font-size-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-dark-text);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+  background-color: var(--color-moonlit-grey);
+}
+
+.accordion-icon {
+  transition: transform var(--transition-fast);
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: 0 1.5rem 1.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-muted-text);
+  line-height: 1.6;
+  border-top: 1px solid var(--color-moonlit-grey);
+}
+
+.accordion-panel[hidden] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER LANDMARK
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-dark-text);
+  color: var(--color-moonlit-grey);
+  padding-block: 3.5rem 2rem;
+  margin-top: auto;
+  border-top: 4px solid var(--color-ethereal-blue);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-moonlit-grey);
+}
+
+.footer-desc {
+  color: var(--color-mocha-mousse);
+  font-size: var(--font-size-sm);
+  margin-top: 0.5rem;
+}
+
+.footer-title {
+  font-family: var(--font-headline);
+  font-size: var(--font-size-sm);
+  color: var(--color-ethereal-blue);
+  margin-bottom: 0.75rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-list a {
+  color: var(--color-moonlit-grey);
+  font-size: var(--font-size-sm);
+}
+
+.footer-list a:hover {
+  color: var(--color-ethereal-blue);
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(242, 240, 234, 0.1);
+  font-size: var(--font-size-sm);
+  color: var(--color-mocha-mousse);
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE BREAKPOINTS (MIN-WIDTH MOBILE-FIRST APPROACH)
+   -------------------------------------------------------------------------- */
+
+/* TABLET BREAKPOINT (@media (min-width: 768px)) */
+@media (min-width: 768px) {
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  /* Features Grid 2 Columns on Tablet */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+  }
+}
+
+/* DESKTOP BREAKPOINT (@media (min-width: 1024px)) */
+@media (min-width: 1024px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    transform: none;
+    box-shadow: none;
+    gap: 2rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 1.75rem;
+  }
+
+  .nav-cta {
+    display: block;
+  }
+
+  /* Features Grid 3 Columns on Desktop */
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

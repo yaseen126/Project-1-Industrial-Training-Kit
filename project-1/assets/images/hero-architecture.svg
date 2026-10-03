@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B2820"/>
+      <stop offset="100%" stop-color="#251813"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A0D4E0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#76B5C5" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="500" rx="16" fill="url(#heroBg)"/>
+
+  <!-- Grid Blueprint Overlay -->
+  <g opacity="0.12" stroke="#A0D4E0" stroke-width="1">
+    <path d="M 0,50 H 800 M 0,100 H 800 M 0,150 H 800 M 0,200 H 800 M 0,250 H 800 M 0,300 H 800 M 0,350 H 800 M 0,400 H 800 M 0,450 H 800" />
+    <path d="M 50,0 V 500 M 100,0 V 500 M 150,0 V 500 M 200,0 V 500 M 250,0 V 500 M 300,0 V 500 M 350,0 V 500 M 400,0 V 500 M 450,0 V 500 M 500,0 V 500 M 550,0 V 500 M 600,0 V 500 M 650,0 V 500 M 700,0 V 500 M 750,0 V 500" />
+  </g>
+
+  <!-- Architectural Framework Nodes & Lines -->
+  <g opacity="0.4" stroke="#A0D4E0" stroke-width="1.5" stroke-dasharray="6 4">
+    <line x1="120" y1="380" x2="280" y2="120" />
+    <line x1="280" y1="120" x2="680" y2="120" />
+    <line x1="680" y1="120" x2="520" y2="380" />
+    <line x1="520" y1="380" x2="120" y2="380" />
+  </g>
+
+  <!-- Desktop Device Frame -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="80" width="460" height="290" rx="12" fill="#F2F0EA" stroke="#5C4033" stroke-width="4"/>
+    <!-- Screen Header Bar -->
+    <rect x="200" y="80" width="460" height="32" rx="12" fill="#E2DDD2"/>
+    <rect x="200" y="100" width="460" height="12" fill="#E2DDD2"/>
+    <!-- Window Control Dots -->
+    <circle cx="224" cy="96" r="4" fill="#C85A54"/>
+    <circle cx="238" cy="96" r="4" fill="#E6A15C"/>
+    <circle cx="252" cy="96" r="4" fill="#5CA872"/>
+    <rect x="274" y="90" width="180" height="12" rx="6" fill="#D3CCC0"/>
+
+    <!-- Desktop Screen Layout Content -->
+    <!-- Navbar wireframe -->
+    <rect x="220" y="125" width="60" height="12" rx="3" fill="#3B2820"/>
+    <rect x="520" y="127" width="35" height="8" rx="2" fill="#8C6D58"/>
+    <rect x="565" y="127" width="35" height="8" rx="2" fill="#8C6D58"/>
+    <rect x="610" y="125" width="35" height="12" rx="4" fill="#14535F"/>
+
+    <!-- Hero Content wireframe -->
+    <rect x="220" y="155" width="220" height="16" rx="4" fill="#3B2820"/>
+    <rect x="220" y="179" width="180" height="8" rx="2" fill="#8C6D58"/>
+    <rect x="220" y="193" width="150" height="8" rx="2" fill="#8C6D58"/>
+    <rect x="220" y="212" width="80" height="20" rx="6" fill="#14535F"/>
+
+    <!-- Hero Visual inside screen -->
+    <rect x="460" y="155" width="185" height="95" rx="8" fill="#E8E3D8" stroke="#A0D4E0" stroke-width="2"/>
+    <path d="M 480 230 L 520 185 L 560 215 L 600 175 L 630 230 Z" fill="#A0D4E0" opacity="0.6"/>
+    <circle cx="590" cy="185" r="10" fill="#E6A15C"/>
+
+    <!-- Content Grid inside screen -->
+    <rect x="220" y="265" width="130" height="85" rx="6" fill="#FFF" stroke="#D8D2C5" stroke-width="1"/>
+    <rect x="365" y="265" width="130" height="85" rx="6" fill="#FFF" stroke="#D8D2C5" stroke-width="1"/>
+    <rect x="510" y="265" width="135" height="85" rx="6" fill="#FFF" stroke="#A0D4E0" stroke-width="2"/>
+
+    <!-- Desktop Base Stand -->
+    <path d="M 380 370 L 480 370 L 490 415 L 370 415 Z" fill="#D3CCC0"/>
+    <rect x="340" y="415" width="180" height="10" rx="4" fill="#B8AF9F"/>
+  </g>
+
+  <!-- Tablet Frame Overlay (Mobile-First / Multi-device concept) -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="210" width="180" height="250" rx="14" fill="#F2F0EA" stroke="#3B2820" stroke-width="4"/>
+    <rect x="90" y="210" width="180" height="24" rx="14" fill="#E2DDD2"/>
+    <rect x="90" y="224" width="180" height="10" fill="#E2DDD2"/>
+    <circle cx="180" cy="222" r="3" fill="#8C6D58"/>
+    <!-- Tablet Screen wireframe -->
+    <rect x="105" y="245" width="150" height="12" rx="3" fill="#3B2820"/>
+    <rect x="105" y="265" width="150" height="40" rx="4" fill="#A0D4E0" opacity="0.4"/>
+    <rect x="105" y="315" width="150" height="60" rx="4" fill="#FFF" stroke="#D8D2C5"/>
+    <rect x="105" y="385" width="150" height="60" rx="4" fill="#FFF" stroke="#D8D2C5"/>
+  </g>
+
+  <!-- Mobile Phone Frame Overlay -->
+  <g filter="url(#shadow)">
+    <rect x="610" y="240" width="110" height="210" rx="16" fill="#F2F0EA" stroke="#14535F" stroke-width="4"/>
+    <rect x="645" y="248" width="40" height="6" rx="3" fill="#14535F"/>
+    <!-- Screen content -->
+    <rect x="620" y="265" width="90" height="10" rx="2" fill="#3B2820"/>
+    <rect x="620" y="282" width="90" height="45" rx="4" fill="#A0D4E0"/>
+    <rect x="620" y="334" width="90" height="50" rx="4" fill="#FFF" stroke="#D8D2C5"/>
+    <rect x="620" y="391" width="90" height="45" rx="4" fill="#FFF" stroke="#D8D2C5"/>
+  </g>
+
+  <!-- Decorative Blueprint Badges -->
+  <g transform="translate(60, 60)">
+    <rect width="110" height="32" rx="16" fill="#A0D4E0"/>
+    <text x="55" y="21" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14535F" text-anchor="middle">RESPONSIVE</text>
+  </g>
+  <g transform="translate(640, 50)">
+    <rect width="100" height="32" rx="16" fill="#5C4033"/>
+    <text x="50" y="21" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F2F0EA" text-anchor="middle">MOBILE-FIRST</text>
+  </g>
+</svg>

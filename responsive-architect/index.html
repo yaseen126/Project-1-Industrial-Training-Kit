@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive, accessible digital experience built with semantic HTML5, CSS3 and Vanilla JavaScript.">
+  <title>RESPONSIVE ARCHITECT — Digital Experience</title>
+  
+  <!-- Google Fonts: Montserrat (Headings) & Roboto (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       HEADER LANDMARK
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <nav id="main-navigation" aria-label="Main Navigation">
+        
+        <!-- Brand -->
+        <a href="#hero" class="brand" aria-label="RESPONSIVE ARCHITECT Home">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+          <span class="brand-title">ARCHITECT</span>
+          <span class="brand-badge">2025</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" class="mobile-menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
+          <li><a href="#blueprint" class="nav-link">Blueprint</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#cta" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Header CTA Button -->
+        <div class="nav-cta">
+          <a href="#cta" class="btn btn-primary btn-sm">BUILD THE EXPERIENCE</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LANDMARK
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- HERO SECTION LANDMARK -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-container">
+        
+        <!-- Hero Left Content -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span>DIGITAL CRAFTSMANSHIP</span>
+          </div>
+
+          <h1 id="hero-heading" class="hero-title">
+            YOU ARE THE <span class="highlight-text">ARCHITECT.</span>
+          </h1>
+
+          <p class="hero-supporting">
+            Your code determines who has access to information and how the world experiences it.
+          </p>
+
+          <p class="hero-additional">
+            We build responsive digital experiences where structure, clarity and human interaction work together.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cta" class="btn btn-primary">BUILD THE EXPERIENCE</a>
+            <a href="#blueprint" class="btn btn-outline">EXPLORE THE BLUEPRINT</a>
+          </div>
+        </div>
+
+        <!-- Hero Right Responsive Device Visual -->
+        <div class="hero-visual-wrapper">
+          <figure class="hero-figure">
+            <div class="visual-corner corner-tl">+</div>
+            <div class="visual-corner corner-tr">+</div>
+            <div class="visual-corner corner-bl">+</div>
+            <div class="visual-corner corner-br">+</div>
+            <img src="assets/images/hero-devices-architect.svg" alt="Architectural visual depicting one digital experience adapting seamlessly across desktop monitor, tablet, and smartphone screens" class="hero-device-img" width="800" height="520" loading="eager">
+            <figcaption class="sr-only">Digital architecture blueprint adapting across mobile, tablet, and desktop viewports.</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section id="intro" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="section-tag">// 01 — PHILOSOPHY</div>
+        <header class="section-header">
+          <h2 id="intro-heading">Digital Experience &amp; Frontend Craft</h2>
+          <p class="section-lead">Constructing inclusive, mobile-first web architectures grounded in web standards.</p>
+        </header>
+
+        <article class="blueprint-card">
+          <div class="card-meta">
+            <span class="meta-label">PRINCIPLE 01</span>
+            <span class="meta-spec">MOBILE-FIRST</span>
+          </div>
+          <h3>The Mobile-First Philosophy</h3>
+          <p>
+            The web is a dynamic, inclusive information system. By building from 320px constraints upward, we construct digital spaces that respect every device, bandwidth, and human context.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- THE TOOLKIT SECTION -->
+    <section id="toolkit" aria-labelledby="toolkit-heading">
+      <div class="container">
+        <div class="section-tag">// 02 — RAW MATERIALS</div>
+        <header class="section-header">
+          <h2 id="toolkit-heading">THE TOOLKIT</h2>
+          <p class="section-lead">Your raw materials.</p>
+        </header>
+
+        <div class="toolkit-grid">
+          
+          <article class="blueprint-card toolkit-card">
+            <div class="card-top-row">
+              <span class="card-number">01</span>
+              <span class="card-tech-label">THE INFRASTRUCTURE</span>
+            </div>
+            <h3 class="card-title-lg">HTML5</h3>
+            <p class="card-body-text">
+              Semantic landmarks and structural meaning. Not just divs, but the right element for the right job.
+            </p>
+            <div class="card-footer-spec">
+              <code>&lt;header&gt; &lt;nav&gt; &lt;main&gt; &lt;footer&gt;</code>
+            </div>
+          </article>
+
+          <article class="blueprint-card toolkit-card">
+            <div class="card-top-row">
+              <span class="card-number">02</span>
+              <span class="card-tech-label">THE SKIN</span>
+            </div>
+            <h3 class="card-title-lg">CSS3</h3>
+            <p class="card-body-text">
+              Responsive styling using CSS Grid, Flexbox and fluid layout techniques.
+            </p>
+            <div class="card-footer-spec">
+              <code>display: grid; clamp(); flex;</code>
+            </div>
+          </article>
+
+          <article class="blueprint-card toolkit-card">
+            <div class="card-top-row">
+              <span class="card-number">03</span>
+              <span class="card-tech-label">THE LOGIC</span>
+            </div>
+            <h3 class="card-title-lg">JAVASCRIPT</h3>
+            <p class="card-body-text">
+              Basic state management and interactive functionality using Vanilla JavaScript.
+            </p>
+            <div class="card-footer-spec">
+              <code>addEventListener(); classList;</code>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- THE BLUEPRINT SECTION -->
+    <section id="blueprint" aria-labelledby="blueprint-heading">
+      <div class="container">
+        <div class="section-tag">// 03 — MACRO LAYOUT</div>
+        <header class="section-header">
+          <h2 id="blueprint-heading">THE BLUEPRINT</h2>
+          <p class="section-lead">Architectural visualization of macro page layout powered by CSS Grid.</p>
+        </header>
+
+        <div class="blueprint-visual-container">
+          <div class="blueprint-canvas-header">
+            <span class="bp-coord">GRID CANVAS // MACRO ARCHITECTURE</span>
+            <span class="bp-coord">SCALE: 1:1 MOBILE-TO-DESKTOP</span>
+          </div>
+
+          <div class="blueprint-macro-grid">
+            
+            <div class="bp-grid-region bp-region-header">
+              <div class="bp-region-header-top">
+                <span class="bp-tag">HEADER</span>
+                <span class="bp-tech">BRAND &bull; LANDMARK</span>
+              </div>
+              <div class="bp-region-nav">
+                <span class="bp-tag-sm">NAVIGATION</span>
+                <span class="bp-tech-sm">FLEXBOX MICRO LAYOUT</span>
+              </div>
+            </div>
+
+            <div class="bp-grid-region bp-region-sidebar">
+              <span class="bp-tag">SIDEBAR</span>
+              <span class="bp-tech">SUPPORTING PANEL</span>
+              <div class="bp-inner-box">
+                <code>aside.sidebar-panel</code>
+              </div>
+            </div>
+
+            <div class="bp-grid-region bp-region-main">
+              <div class="bp-region-main-top">
+                <span class="bp-tag">MAIN</span>
+                <span class="bp-tech">PRIMARY CONTENT LANDMARK</span>
+              </div>
+              <div class="bp-main-content-block">
+                <span class="bp-tag-sm">CONTENT ARTICLES</span>
+                <p>Grid-based article distribution and information flow.</p>
+              </div>
+            </div>
+
+            <div class="bp-grid-region bp-region-footer">
+              <span class="bp-tag">FOOTER</span>
+              <span class="bp-tech">TERMINAL METADATA &bull; LANDMARK</span>
+            </div>
+
+          </div>
+
+          <div class="blueprint-canvas-footer">
+            <span>GRID-TEMPLATE-AREAS: "HEADER" "SIDEBAR MAIN" "FOOTER"</span>
+            <span>MACRO CONTROL: CSS GRID</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE EXECUTION ROADMAP SECTION -->
+    <section id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-tag">// 04 — METHODOLOGY</div>
+        <header class="section-header">
+          <h2 id="process-heading">THE EXECUTION ROADMAP</h2>
+          <p class="section-lead">A systematic architectural roadmap from discovery to final audit.</p>
+        </header>
+
+        <div class="roadmap-timeline-wrapper">
+          <div class="timeline-track-line"></div>
+
+          <ol class="roadmap-timeline">
+            
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">01</span>
+                  <span class="node-code">STAGE_01</span>
+                </div>
+                <h3 class="node-title">DISCOVERY</h3>
+                <p class="node-desc">Define what the experience needs to accomplish.</p>
+              </article>
+            </li>
+
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">02</span>
+                  <span class="node-code">STAGE_02</span>
+                </div>
+                <h3 class="node-title">WIREFRAME</h3>
+                <p class="node-desc">Establish hierarchy, flow and content relationships.</p>
+              </article>
+            </li>
+
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">03</span>
+                  <span class="node-code">STAGE_03</span>
+                </div>
+                <h3 class="node-title">SEMANTICS</h3>
+                <p class="node-desc">Translate the structure into meaningful HTML5 landmarks.</p>
+              </article>
+            </li>
+
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">04</span>
+                  <span class="node-code">STAGE_04</span>
+                </div>
+                <h3 class="node-title">STYLE</h3>
+                <p class="node-desc">Build the visual system with Grid, Flexbox and responsive CSS.</p>
+              </article>
+            </li>
+
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">05</span>
+                  <span class="node-code">STAGE_05</span>
+                </div>
+                <h3 class="node-title">LOGIC</h3>
+                <p class="node-desc">Add interaction and state using Vanilla JavaScript.</p>
+              </article>
+            </li>
+
+            <li class="timeline-node">
+              <article class="timeline-card">
+                <div class="node-header">
+                  <span class="node-circle">06</span>
+                  <span class="node-code">STAGE_06</span>
+                </div>
+                <h3 class="node-title">AUDIT</h3>
+                <p class="node-desc">Test responsiveness, accessibility and performance.</p>
+              </article>
+            </li>
+
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED WORK SECTION -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section-tag">// 05 — PORTFOLIO</div>
+        <header class="section-header">
+          <h2 id="work-heading">SELECTED DIGITAL EXPERIENCES</h2>
+          <p class="section-lead">A showcase of production-ready frontend architectures.</p>
+        </header>
+
+        <div class="work-grid">
+          
+          <article class="blueprint-card work-card">
+            <div class="work-meta">
+              <span class="project-num">PROJECT 01</span>
+              <span class="project-category">Responsive Editorial</span>
+            </div>
+            <div class="work-media">
+              <img src="assets/images/project-editorial.svg" alt="Editorial Architecture content layout layout preview" class="work-img" width="400" height="240" loading="lazy">
+            </div>
+            <h3 class="work-title">Editorial Architecture</h3>
+            <p class="work-desc">
+              A content experience designed around hierarchy, readability and fluid layouts.
+            </p>
+            <div class="work-footer">
+              <a href="#work" class="btn btn-outline btn-sm" aria-label="View Editorial Architecture Case Study">View Case Study</a>
+            </div>
+          </article>
+
+          <article class="blueprint-card work-card">
+            <div class="work-meta">
+              <span class="project-num">PROJECT 02</span>
+              <span class="project-category">Digital Experience</span>
+            </div>
+            <div class="work-media">
+              <img src="assets/images/project-studio.svg" alt="Studio Interface component layout preview" class="work-img" width="400" height="240" loading="lazy">
+            </div>
+            <h3 class="work-title">Studio Interface</h3>
+            <p class="work-desc">
+              A structured interface where components adapt naturally across different screen sizes.
+            </p>
+            <div class="work-footer">
+              <a href="#work" class="btn btn-outline btn-sm" aria-label="View Studio Interface Case Study">View Case Study</a>
+            </div>
+          </article>
+
+          <article class="blueprint-card work-card">
+            <div class="work-meta">
+              <span class="project-num">PROJECT 03</span>
+              <span class="project-category">Product Interface</span>
+            </div>
+            <div class="work-media">
+              <img src="assets/images/project-mobile.svg" alt="Mobile First product interface layout preview" class="work-img" width="400" height="240" loading="lazy">
+            </div>
+            <h3 class="work-title">Mobile First</h3>
+            <p class="work-desc">
+              A mobile-first experience designed to scale from compact screens to large displays.
+            </p>
+            <div class="work-footer">
+              <a href="#work" class="btn btn-outline btn-sm" aria-label="View Mobile First Case Study">View Case Study</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBILITY SECTION -->
+    <section id="accessibility" aria-labelledby="accessibility-heading">
+      <div class="container">
+        <div class="section-tag">// 06 — INCLUSION &amp; WCAG</div>
+        <header class="section-header">
+          <h2 id="accessibility-heading">DESIGNED FOR EVERY SCREEN. EVERY USER.</h2>
+          <p class="section-lead">Building inclusive web experiences adhering to WCAG 2.1 standards.</p>
+        </header>
+
+        <div class="accessibility-grid">
+          
+          <article class="blueprint-card a11y-card">
+            <div class="a11y-num">01</div>
+            <h3 class="a11y-title">SEMANTIC STRUCTURE</h3>
+            <p class="a11y-desc">Meaningful HTML5 landmarks.</p>
+            <div class="a11y-badge">
+              <span class="tech-tag">&lt;header&gt; &lt;nav&gt; &lt;main&gt; &lt;footer&gt;</span>
+            </div>
+          </article>
+
+          <article class="blueprint-card a11y-card">
+            <div class="a11y-num">02</div>
+            <h3 class="a11y-title">KEYBOARD READY</h3>
+            <p class="a11y-desc">Interactive elements must be keyboard accessible.</p>
+            <div class="a11y-badge">
+              <button type="button" class="a11y-test-btn" aria-label="Test focus ring demonstration">Focus Ring Test</button>
+            </div>
+          </article>
+
+          <article class="blueprint-card a11y-card">
+            <div class="a11y-num">03</div>
+            <h3 class="a11y-title">RESPONSIVE BY DEFAULT</h3>
+            <p class="a11y-desc">The interface adapts to different screen sizes.</p>
+            <div class="a11y-badge">
+              <span class="tech-tag">320px &rarr; 1920px+</span>
+            </div>
+          </article>
+
+          <article class="blueprint-card a11y-card">
+            <div class="a11y-num">04</div>
+            <h3 class="a11y-title">ACCESSIBLE INTERACTION</h3>
+            <p class="a11y-desc">Clear focus states, labels and readable contrast.</p>
+            <div class="a11y-badge">
+              <span class="tech-tag">WCAG 7:1 Ratio</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="cta" aria-labelledby="cta-heading">
+      <div class="container cta-container">
+        <div class="section-tag">// 07 — CONTACT</div>
+        <header class="section-header text-center">
+          <h2 id="cta-heading">Ready to Build the Experience?</h2>
+          <p class="section-lead">Construct digital spaces with craftsmanship, speed, and integrity.</p>
+        </header>
+
+        <div class="cta-actions">
+          <a href="#hero" class="btn btn-primary btn-lg">BUILD THE EXPERIENCE</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER LANDMARK
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <span class="brand-title">ARCHITECT</span>
+          <span class="footer-tag">DIGITAL EXPERIENCE</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#toolkit">Toolkit</a></li>
+          <li><a href="#blueprint">Blueprint</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#cta">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom-row">
+        <p class="footer-text">Built with Mobile-First HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p class="footer-copy">&copy; 2026 Responsive Architect. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

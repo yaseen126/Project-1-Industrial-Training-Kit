@@ -1,0 +1,20 @@
+{
+  "name": "project-1-responsive-frontend-interface",
+  "version": "1.0.0",
+  "description": "Project 1 - Responsive Frontend Interface (Pure HTML5, CSS3, Vanilla JS)",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "responsive",
+    "frontend",
+    "html5",
+    "css-grid",
+    "flexbox",
+    "vanilla-js"
+  ],
+  "author": "",
+  "license": "MIT"
+}

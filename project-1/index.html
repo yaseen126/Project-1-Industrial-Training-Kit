@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project 1 – Responsive Frontend Interface demonstrating mobile-first CSS Grid and Flexbox architecture, semantic HTML5, WCAG accessibility, and Vanilla JavaScript.">
+  <title>Project 1 – Responsive Frontend Interface | Digital Architecture</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  
+  <!-- Google Fonts: Montserrat (Headings) & Roboto (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       HEADER & NAVIGATION LANDMARK
+       ========================================================================= -->
+  <header class="page-header">
+    <div class="container header-container">
+      
+      <!-- Brand / Logo -->
+      <a href="#home" class="brand" aria-label="Digital Architecture Homepage">
+        <svg class="brand-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="16" fill="#3B2820"/>
+          <path d="M16 44V20L32 10L48 20V44L32 54Z" stroke="#A0D4E0" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M32 10V54" stroke="#A0D4E0" stroke-width="3" stroke-dasharray="2 2"/>
+          <circle cx="32" cy="32" r="6" fill="#F2F0EA"/>
+        </svg>
+        <div>
+          <span class="brand-text">ARCHITECT</span>
+          <span class="brand-subtitle">FRONTEND CRAFT</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navigation Landmarks -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#resources" class="nav-link">Services</a></li>
+          <li><a href="#interactive" class="nav-link">Resources</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#resources" class="btn btn-primary btn-sm">Start Building</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION LANDMARK
+       ========================================================================= -->
+  <section id="home" class="hero-section" aria-label="Introduction Hero">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">Digital Craftsmanship 2025</div>
+          <h1 class="hero-title">YOU ARE THE <span class="text-highlight">ARCHITECT.</span></h1>
+          <p class="hero-subtitle">
+            Your code determines who has access to information and how the world experiences it. Construct responsive, accessible digital spaces grounded in engineering precision.
+          </p>
+          <div class="hero-actions">
+            <a href="#resources" class="btn btn-primary">Start Building</a>
+            <a href="#interactive" class="btn btn-secondary">Explore Architecture</a>
+          </div>
+        </div>
+
+        <!-- Hero Responsive Visual -->
+        <div class="hero-visual-wrapper">
+          <img src="assets/images/hero-architecture.svg" alt="Responsive web application architecture across mobile, tablet, and desktop viewports" class="hero-img" width="800" height="500" loading="eager">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MAIN CONTENT LANDMARK & SIDEBAR ARCHITECTURE
+       ========================================================================= -->
+  <main id="main-content" class="main-wrapper">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <header class="section-header" id="about">
+        <h2 class="section-title">Web Architecture &amp; Frontend Craftsmanship</h2>
+        <p class="section-subtitle">
+          Constructing interfaces that respect user context across every device width. Mobile-first engineering built with semantic HTML5, CSS Grid macro-layouts, and vanilla JavaScript.
+        </p>
+      </header>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-container" aria-label="Content Filter Controls">
+        <button class="filter-btn active" data-filter="all">All Topics</button>
+        <button class="filter-btn" data-filter="responsive">Responsive</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+        <button class="filter-btn" data-filter="accessibility">Accessibility</button>
+      </div>
+
+      <!-- Macro Architecture: Main Content Grid + Sidebar Panel -->
+      <div class="architecture-layout">
+        
+        <!-- Primary Articles Grid Section -->
+        <section id="resources" class="content-section" aria-label="Core Content Articles">
+          <div class="cards-grid">
+
+            <!-- Card 1: Mobile-First Responsive Architecture -->
+            <article class="article-card" data-category="responsive">
+              <div class="card-media">
+                <img src="assets/images/card-responsive.svg" alt="Mobile-First Responsive Layout Grid Diagram" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">Responsive Design</span>
+                <h3 class="card-title">Mobile-First Fluid Layout Systems</h3>
+                <p class="card-desc">
+                  Start with constraints on 320px viewports, then expand systematically using min-width media queries at 768px and 1024px to ensure seamless canvas adaptability.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">Explore Architecture &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Semantic HTML5 & Accessibility -->
+            <article class="article-card" data-category="accessibility">
+              <div class="card-media">
+                <img src="assets/images/card-semantic.svg" alt="Semantic HTML5 Landmark Structure" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">Semantic HTML</span>
+                <h3 class="card-title">Landmarks &amp; Meaningful Semantics</h3>
+                <p class="card-desc">
+                  Replace indiscriminate div nesting with intentional header, nav, main, section, article, and footer landmarks for search engine parsing and screen reader navigation.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">View Landmarks &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Accessible Interfaces -->
+            <article class="article-card" data-category="accessibility">
+              <div class="card-media">
+                <img src="assets/images/card-accessible.svg" alt="WCAG Accessibility Focus and Contrast Indicators" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">Accessible Interfaces</span>
+                <h3 class="card-title">WCAG Alignment &amp; Keyboard Access</h3>
+                <p class="card-desc">
+                  Enforce visible :focus-visible outlines, 7:1 color contrast ratios, screen reader ARIA states, and native keyboard tab stops across all user controls.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">Audit Standards &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: CSS Architecture & Grid -->
+            <article class="article-card" data-category="architecture">
+              <div class="card-media">
+                <img src="assets/images/card-css-grid.svg" alt="CSS Grid Macro Layout Structure" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">CSS Architecture</span>
+                <h3 class="card-title">Grid for Macro, Flexbox for Micro</h3>
+                <p class="card-desc">
+                  Employ CSS Grid for multi-column page regions and structural boundaries, while leveraging Flexbox for localized component alignment and icon button groups.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">Examine CSS Rules &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Digital Experience & Craft -->
+            <article class="article-card" data-category="responsive">
+              <div class="card-media">
+                <img src="assets/images/card-craftsmanship.svg" alt="Digital Craftsmanship Blueprint and Precision Tools" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">Frontend Craft</span>
+                <h3 class="card-title">Refined 2025 Palette &amp; Micro-Details</h3>
+                <p class="card-desc">
+                  Harmonize warm Mocha Mousse tones with Moonlit Grey backgrounds and Ethereal Blue accents to form a grounded, dignified aesthetic free of SaaS clichés.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">Review Palette &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: Performance & Core Web Vitals -->
+            <article class="article-card" data-category="architecture">
+              <div class="card-media">
+                <img src="assets/images/card-performance.svg" alt="Performance Score and Core Web Vitals Gauge" class="card-img" width="400" height="240" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="category-badge">Digital Experience</span>
+                <h3 class="card-title">Lightweight Vanilla Execution</h3>
+                <p class="card-desc">
+                  Zero heavyweight framework overhead. Native ES6+ JavaScript handles user state, drawer toggles, and active link states with sub-millisecond execution times.
+                </p>
+                <div class="card-footer">
+                  <a href="#interactive" class="card-link">Measure Speed &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Sidebar / Supporting Panel Landmark -->
+        <aside class="sidebar-panel" aria-label="Architecture Sidebar Panel">
+          
+          <!-- Widget 1: Core Principles -->
+          <div class="widget-card">
+            <h3 class="widget-title">Architectural Pillars</h3>
+            <p class="card-desc" style="margin-top: 0.5rem;">
+              Key guidelines governing our 2025 frontend engineering workflow:
+            </p>
+            <ul style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-ethereal-dark); font-weight: bold;">✓</span> Mobile-First Breakpoints
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-ethereal-dark); font-weight: bold;">✓</span> Semantic Landmark Tags
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-ethereal-dark); font-weight: bold;">✓</span> Fluid Typography Clamp()
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-ethereal-dark); font-weight: bold;">✓</span> Zero Third-Party Frameworks
+              </li>
+            </ul>
+          </div>
+
+          <!-- Widget 2: Interactive Accessibility Checklist Accordion -->
+          <div class="widget-card">
+            <h3 class="widget-title">Accessibility Audit</h3>
+            <div class="accordion-list">
+              
+              <div class="accordion-item is-open">
+                <button class="accordion-header" aria-expanded="true">
+                  <span>Semantic Landmarks</span>
+                  <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion-body">
+                  Valid header, nav, main, section, article, aside, and footer elements structure the DOM for assistive technology.
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span>Keyboard Navigation</span>
+                  <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion-body">
+                  Full Tab / Shift+Tab keyboard focus sequence with visible focus rings and skip-to-main-content link.
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span>Contrast &amp; Colors</span>
+                  <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion-body">
+                  Mocha Mousse dark text (#2C221E) on Moonlit Grey (#F2F0EA) satisfies WCAG AAA contrast ratio specifications.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Widget 3: Metric Stats -->
+          <div class="widget-card">
+            <h3 class="widget-title">Performance Metrics</h3>
+            <div class="metric-grid">
+              <div class="metric-item">
+                <div class="metric-val">100%</div>
+                <div class="metric-lbl">Semantic</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-val">0</div>
+                <div class="metric-lbl">Frameworks</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-val">&lt;100ms</div>
+                <div class="metric-lbl">TBT Latency</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-val">320px+</div>
+                <div class="metric-lbl">Viewports</div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- =========================================================================
+           INTERACTIVE CODE / ARCHITECTURE INSPECTOR DEMO
+           ========================================================================= -->
+      <section id="interactive" class="interactive-section" style="margin-top: var(--space-2xl);">
+        <div class="container">
+          <div class="interactive-grid">
+            <div>
+              <span class="category-badge" style="background-color: var(--color-ethereal-blue); color: var(--color-ethereal-dark);">Live Inspector</span>
+              <h2 class="interactive-heading" style="margin-top: 0.5rem;">Architecture Blueprint</h2>
+              <p class="interactive-sub" style="margin-top: 0.5rem;">
+                Select a component tab to inspect the clean CSS Grid, Flexbox, and Vanilla JS rules powering this interface.
+              </p>
+            </div>
+            
+            <div class="interactive-display">
+              <div class="interactive-tabs">
+                <button class="tab-btn active" data-tab="tab-grid">CSS Grid (Macro)</button>
+                <button class="tab-btn" data-tab="tab-flex">Flexbox (Micro)</button>
+                <button class="tab-btn" data-tab="tab-js">Vanilla JS State</button>
+              </div>
+
+              <!-- Tab 1: CSS Grid -->
+              <div class="tab-content active" id="tab-grid">
+                <pre class="code-preview"><code>/* Macro Desktop Architecture */
+@media (min-width: 1024px) {
+  .architecture-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-xl);
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}</code></pre>
+              </div>
+
+              <!-- Tab 2: Flexbox -->
+              <div class="tab-content" id="tab-flex">
+                <pre class="code-preview"><code>/* Micro Component Flex Layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}</code></pre>
+              </div>
+
+              <!-- Tab 3: Vanilla JS -->
+              <div class="tab-content" id="tab-js">
+                <pre class="code-preview"><code>// Mobile Menu Toggle & State Control
+menuToggle.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});</code></pre>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER LANDMARK
+       ========================================================================= -->
+  <footer id="contact" class="page-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Footer Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">ARCHITECT</div>
+          <p class="footer-desc">
+            Constructing responsive, accessible, and performant web interfaces with zero framework dependencies.
+          </p>
+        </div>
+
+        <!-- Footer Link Column 1 -->
+        <div>
+          <h4 class="footer-nav-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Architecture</a></li>
+            <li><a href="#resources" class="footer-link">Content Articles</a></li>
+            <li><a href="#interactive" class="footer-link">Live Inspector</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Link Column 2 -->
+        <div>
+          <h4 class="footer-nav-title">Core Standards</h4>
+          <ul class="footer-links">
+            <li><a href="#resources" class="footer-link">Mobile-First Grid</a></li>
+            <li><a href="#resources" class="footer-link">Semantic Landmarks</a></li>
+            <li><a href="#resources" class="footer-link">WCAG Accessibility</a></li>
+            <li><a href="#resources" class="footer-link">Vanilla JS Interaction</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Architectural Engineering. Built with Mobile-First HTML5, CSS3, and Vanilla JavaScript.
+        </div>
+        <div>
+          Mocha Mousse &bull; Ethereal Blue &bull; Moonlit Grey Design System
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Scroll back to top of page">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript Execution Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
